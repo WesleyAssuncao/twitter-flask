@@ -1,0 +1,41 @@
+ {% extends 'base.html' %}
+
+ {% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de Usuários</title>
+</head>
+<body>
+ <h1>Lista de Usuários</h1>
+ <hr>
+ <table border="2">
+	 <tr>
+		 <td><b> ID </b></td>
+		 <td><b> USERNAME </b></td>
+		 <td><b> PASSWORD </b></td>
+		 <td><b> NOME </b></td>
+		 <td><b> EMAIL </b></td>
+		 <td><b> EXCLUIR </b></td>
+		 <td><b> ATUALIZAR </b></td>
+	 </tr>
+	 {% for  userd in Users %}
+     <tr>
+         <td>{{  userd.id }}</td>
+		 <td>{{  userd.username }} </td>
+		 <td>{{  userd.password }}</td>
+		 <td>{{  userd.name }}</td>
+         <td>{{  userd.email }}</td>
+	     <td><a href="/excluir/{{  userd.id }}">X</a></td>
+	     <td><a href="/atualizar/{{ userd.id }}">Atualizar</a></td>
+     </tr>
+
+      {% endfor %}
+ </table>
+</body>
+</html>
+
+ {% endblock %}

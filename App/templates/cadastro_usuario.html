@@ -1,0 +1,35 @@
+ {% extends 'base.html' %}
+
+ {% block content %}
+
+      <div class="col-md-4 col-md-offset-4">
+	       <h2><center>Cadastro de Usuários</center></h2>
+   <form action="" method="post">
+       {{ form_cadastro_usuario.csrf_token }}
+	   <div class="form_group">
+		   <label>Username</label>
+		   {{ form_cadastro_usuario.username(class="form-control", placeholder="seu_usuario") }}
+	   </div>
+
+	   <div class="form_group">
+		   <label>Password</label>
+		   {{ form_cadastro_usuario.password(class="form-control") }}
+	   </div>
+
+	  <div class="form_group">
+		   <label>Nome</label>
+		   {{ form_cadastro_usuario.name(class="form-control") }}
+	   </div>
+
+	    <div class="form_group">
+		   <label>Email</label>
+		   {{ form_cadastro_usuario.email(class="form-control") }}
+	   </div>
+
+
+	  <button type="submit" class="btn-default">Cadastrar</button>
+
+   </form>
+      </div>
+
+ {% endblock %}
